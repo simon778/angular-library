@@ -1,0 +1,8 @@
+<h4>First 4 books from library</h4>
+
+<a *ngFor="let book of books" class="col-1-4"
+    routerLink="/detail/{{book.id}}">
+  <div class="module book">
+    <h4>{{book.name}}</h4>
+  </div>
+</a>

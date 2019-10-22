@@ -1,0 +1,36 @@
+<h4>My Books</h4>
+
+
+<div>
+  <label class="item">Book name (min 4 character):
+    <input id="bookName" name="bookName" #bookName required minlength="4" />
+  </label>
+  
+  <label class="item">Book author (min 4 character):
+    <input id="bookAuthor" name="bookAuthor" #bookAuthor required minlength="4" />
+  </label>
+ 
+    <button class="item" (click)="add(bookName.value, bookAuthor.value); bookName.value=''; bookAuthor.value=''">
+    Add book
+  </button>
+</div>
+
+
+   <table class="table table-sm">
+    <thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Name</th>
+			<th scope="col">Author</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let book of books">
+			<td> {{book.id}}</td>
+			<td><a routerLink="/detail/{{book.id}}"> {{book.name}} </a></td>
+			<td>{{book.author}}</td>
+		</tr>
+	</tbody>		
+	</table>
+	
+	
